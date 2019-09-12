@@ -45,7 +45,7 @@
     * **mltx-bg-dev** accept và lưu thông tin kết nối
     * **mltx-bg-dev** reject nếu bảng lưu thông tin pairing đã đầy
     * Kết thúc quá trình, các lần kết nối tiếp theo không cần thực hiện lại **pairing**
-    
+
 3.3. Connect
 
 * Nếu **mltx-bg-app** đã thực hiện pairing trước đó có thể thực hiện luôn quá trình kết nối:
@@ -60,7 +60,7 @@
 
 Characteristic | Type | Length | Properties | Description | UUID
 --- | --- | --- | --- | --- | ---
-version | uint8 | 1 | r--
+version | uint8 | 1 | r-- | MLTX service version
 update_count | uint8 | 1 | r-n | số lần **mltx-meter** update data
 tx_status | uint16 | 2 | r-- | xem 4.1.1
 time | time | 4 | rw- | Thời gian hiện tại **mltx-meter**
@@ -70,7 +70,7 @@ geo_speed | uint16 | 2 | r-- | Vận tốc GPS
 ecu_speed | uint16 | 2 | r-- | Vận tốc ECU
 tripid | uint16 | 2 | r-- | ID cuốc
 shiftid | uint16 | 2 | r-- | ID ca
-meter_fare | uint32 | 4 | r-- | Tiền **mltx-meter**
+meter_fare | uint32 | 4 | r-- | Tổng tiền **mltx-meter**
 trip_fare | uint32 | 4 | r-- | Tiền cuốc
 trip_time | uint32 | 4 | r-- | Thời gian cuốc
 trip_lon | float | 4 | r-- | Kinh độ bắt đầu cuốc
