@@ -8,7 +8,7 @@
 
 ## 2. Định nghĩa
 
-### 2.1. GATT định nghĩa **Profile**, **Service**, **Characteristics**
+2.1. GATT định nghĩa **Profile**, **Service**, **Characteristics**
 * Mỗi Profile định nghĩa 1 nhóm các Services
 * Mỗi Service định nghĩa 1 nhóm các Characteristics:
   * Các service được định danh bằng 16-bit hoặc 128-bit UUID
@@ -17,43 +17,43 @@
   * Các thuộc tính định nghĩa kiểu, kích thước dữ liệu
   * Các thuộc tính định nghĩa phương thức đọc, ghi, notification
 
-### 2.2. Đồng hồ: gọi tên **mltx-meter**
+2.2. Đồng hồ: gọi tên **mltx-meter**
 
-### 2.3. Thiết bị chuyển tiếp đóng vai trò ngoại vi(peripheral) hay GATT server: gọi tên **mltx-bg-dev**
+2.3. Thiết bị chuyển tiếp đóng vai trò ngoại vi(peripheral) hay GATT server: gọi tên **mltx-bg-dev**
 
-### 2.3. Mobile app đóng vai trò central device hay GATT client: gọi tên **mltx-bg-app**
+2.3. Mobile app đóng vai trò central device hay GATT client: gọi tên **mltx-bg-app**
 
 ## 3. Tương tác giữ mobile app và thiết bị:
 
-### 3.1. Scan
+3.1. Scan
 
-3.1.1 **mltx-bg-app** thục hiện scan các thiết bị BLE
+* **mltx-bg-app** thục hiện scan các thiết bị BLE
 
-3.1.2 Thiết bị **mltx-bg-dev** trả lời bằng bản tin scan-response
+* Thiết bị **mltx-bg-dev** trả lời bằng bản tin scan-response
 
-3.1.3 **mltx-bg-app** kiểm tra thiết bị hợp lệ: kiểm tra nội dung bản tin san-response để xác nhận.
+* **mltx-bg-app** kiểm tra thiết bị hợp lệ: kiểm tra nội dung bản tin san-response để xác nhận.
 
-### 3.2. Pairing:
+3.2. Pairing:
 
-3.2.1 Thiết bị **mltx-bg-dev** cho phép 1 hoặc nhiều **mltx-bg-app** pair (giới hạn == 3)
+* Thiết bị **mltx-bg-dev** cho phép 1 hoặc nhiều **mltx-bg-app** pair (giới hạn == 3)
 
-3.2.2 Sau pairing **mltx-bg-app** sẽ có quyền tương tác với các characteristic( đọc ghi, nhận notification) từ **mltx-bg-dev**
+* Sau pairing **mltx-bg-app** sẽ có quyền tương tác với các characteristic( đọc ghi, nhận notification) từ **mltx-bg-dev**
 
-3.2.3 Thiết bị vào chế độ pairing:
-* User kích hoạt bằng 1 nút vật lý: nhấn giữ trong vòng 5s
-* **mltx-bg-app** thực hiện kết nối và gửi pairing request
-* **mltx-bg-dev** accept và lưu thông tin kết nối
-* **mltx-bg-dev** reject nếu bảng lưu thông tin pairing đã đầy
-* Kết thúc quá trình, các lần kết nối tiếp theo không cần thực hiện lại **pairing**
-### 3.3. Connect
+* Thiết bị vào chế độ pairing:
+    * User kích hoạt bằng 1 nút vật lý: nhấn giữ trong vòng 5s
+    * **mltx-bg-app** thực hiện kết nối và gửi pairing request
+    * **mltx-bg-dev** accept và lưu thông tin kết nối
+    * **mltx-bg-dev** reject nếu bảng lưu thông tin pairing đã đầy
+    * Kết thúc quá trình, các lần kết nối tiếp theo không cần thực hiện lại **pairing**
+3.3. Connect
 
-3.3.1 Nếu **mltx-bg-app** đã thực hiện pairing trước đó có thể thực hiện luôn quá trình kết nối:
-* Nếu thiết bị **mltx-bg-dev** trong tầm của **mltx-bg-app**: kết nối thành công
-* Nếu thiết bị **mltx-bg-dev** ngoài tầm của **mltx-bg-app** hoặc bị hỏng: kết nối thất bại
+* Nếu **mltx-bg-app** đã thực hiện pairing trước đó có thể thực hiện luôn quá trình kết nối:
+    * Nếu thiết bị **mltx-bg-dev** trong tầm của **mltx-bg-app**: kết nối thành công
+    * Nếu thiết bị **mltx-bg-dev** ngoài tầm của **mltx-bg-app** hoặc bị hỏng: kết nối thất bại
 
 ## 4. MLTX Service
 
-### 4.1 MLTX Characteristics table
+4.1 MLTX Characteristics table
 
 > data type: uint16, uint32, time, float có format little endian
 
