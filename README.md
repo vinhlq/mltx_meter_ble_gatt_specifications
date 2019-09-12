@@ -45,6 +45,7 @@
     * **mltx-bg-dev** accept và lưu thông tin kết nối
     * **mltx-bg-dev** reject nếu bảng lưu thông tin pairing đã đầy
     * Kết thúc quá trình, các lần kết nối tiếp theo không cần thực hiện lại **pairing**
+    
 3.3. Connect
 
 * Nếu **mltx-bg-app** đã thực hiện pairing trước đó có thể thực hiện luôn quá trình kết nối:
